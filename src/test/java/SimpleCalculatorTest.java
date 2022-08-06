@@ -1,8 +1,15 @@
+import junit.framework.Test;
 import junit.framework.TestCase;
+import junit.framework.TestSuite;
 
 //you start by extending the test class from the standard JUnit junit.framework.TestCase.
 // This base class includes the framework code that JUnit needs to automatically run the tests.
 public class SimpleCalculatorTest extends TestCase {
+
+    //A constructor is needed for the second type of method called Test.
+    public SimpleCalculatorTest(String methodName) {
+        super(methodName);
+    }
 //The JUnit team has defined three discrete goals for the framework:
 //
 //The framework must help us write useful tests.
@@ -32,5 +39,22 @@ public class SimpleCalculatorTest extends TestCase {
 //    void testComputeCircleRadius(){
 //        SimpleCalculator simpleCalculator = new SimpleCalculator();
 //        assertEquals(314.1592653589793, simpleCalculator.computeCircleArea(10), "Should return circle area.");
+
+//    public static Test suite()
+//    {
+//        return new TestSuite(SimpleCalculator.class);
+//    }
+
+    public static Test suite()
+    {
+        //You can add as many tests as you want!
+        TestSuite suite = new TestSuite("All tests from part 1");
+        suite.addTestSuite(SimpleCalculatorTest.class);
+        suite.addTestSuite(AnotherCalculatorTest.class);
+        suite.addTest(new SimpleCalculatorTest("testAdd"));
+        suite.addTest(new SimpleCalculatorTest("testSubtract"));
+        return suite;
     }
+
+}
 

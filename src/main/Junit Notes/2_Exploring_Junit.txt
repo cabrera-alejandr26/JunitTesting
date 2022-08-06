@@ -1,0 +1,28 @@
+TestCase + TestSuite + BaseTestRunner = TestResult.
+
+These three classes are the backbone of the JUnit framework. Once you understand how
+TestCase, TestSuite, and BaseTestRunner work, you will be able to write whatever tests
+you need. On a daily basis, you only need to write test cases. The other classes work
+behind the scenes to bring your tests to life. These three classes work closely with
+four other classes to create the core JUnit framework
+
+THE SEVEN CORE JUNIT CLASSES AND INTERFACES:
+Class/Interface:
+
+Assert: An assert method is silent when its proposition succeeds but throws an exception
+it the proposition fails.
+
+TestResult: A TestResult collects any errors or failures that occur during a test.
+
+Test: A test can be run and passed a TestResult.
+
+TestListener: A TestListener is apprised of events that occur during a test, including
+when the test begins and ends, along with any errors or failures.
+
+TestCase: A TestCase defines an environment (or Fixture) that can be used to run multiple tests.
+
+TestSuite: A TestSuite runs a collection of test cases, which may include other test suites. It is a composite
+of Tests.
+
+BaseTestRunner: A test runner is a user interface for launching tests. BaseTestRunner
+is the superclass for all test runners.
